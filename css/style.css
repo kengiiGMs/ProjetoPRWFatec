@@ -1,0 +1,104 @@
+:root {
+    --violet: rgb(99 102 241)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    margin-top: 1%;
+}
+
+.linksPages {
+    margin-top: 1%;
+}
+
+.linkavaliacao {
+    color: var(--violet);
+    margin-left: 1%;
+}
+
+.preco {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.tituloCamiseta {
+    font-size: 2.5rem
+}
+
+.cores {
+    height: 35px;
+    width: 35px;
+
+    border-radius: 30px;
+    display: flex;
+    margin: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all 0.1s;
+}
+
+.verde {
+    background-color: green;
+}
+
+.vermelho {
+    background-color: red;
+}
+
+.azul {
+    background-color: blue;
+}
+
+.cores:hover {
+    border: 2px solid whitesmoke;
+    box-shadow: none;
+}
+
+.corSelecionada {
+    border: 2px solid whitesmoke;
+    box-shadow: none;
+}
+
+.tituloCores {
+    margin: 0;
+}
+
+.textoTamanhos {
+    text-align: center;
+}
+
+.cardTamanhos {
+    transition: all 0.4s;
+    margin-bottom: 10px;
+}
+
+.cardTamanhos:hover {
+    border: 1px solid var(--violet);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btn-violet {
+    color: var(--violet);
+    border-color: var(--violet);
+}
+
+.btn-violet:hover {
+    background-color: var(--violet);
+    color: white;
+}
+
+.tamanhosLink {
+    color: black;
+    transition: all 0.3s;
+}
+
+.tamanhosLink:hover {
+    color: var(--violet);
+}
