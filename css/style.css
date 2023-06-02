@@ -1,104 +1,122 @@
+/* all */
 :root {
-    --violet: rgb(99 102 241)
+	--violet: rgb(99 102 241);
 }
 
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 a {
-    text-decoration: none;
+	text-decoration: none;
 }
+/* all */
 
-main {
-    margin-top: 1%;
-}
-
-.linksPages {
-    margin-top: 1%;
-}
-
-.linkavaliacao {
-    color: var(--violet);
-    margin-left: 1%;
-}
-
-.preco {
-    font-size: 2rem;
-    margin: 0;
-}
-
-.tituloCamiseta {
-    font-size: 2.5rem
-}
-
-.cores {
-    height: 35px;
-    width: 35px;
-
-    border-radius: 30px;
-    display: flex;
-    margin: 0;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    transition: all 0.1s;
-}
-
-.verde {
-    background-color: green;
-}
-
-.vermelho {
-    background-color: red;
-}
-
-.azul {
-    background-color: blue;
-}
-
-.cores:hover {
-    border: 2px solid whitesmoke;
-    box-shadow: none;
-}
-
-.corSelecionada {
-    border: 2px solid whitesmoke;
-    box-shadow: none;
-}
-
-.tituloCores {
-    margin: 0;
-}
-
-.textoTamanhos {
-    text-align: center;
-}
-
-.cardTamanhos {
-    transition: all 0.4s;
-    margin-bottom: 10px;
-}
-
-.cardTamanhos:hover {
-    border: 1px solid var(--violet);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
+/* button */
 .btn-violet {
-    color: var(--violet);
-    border-color: var(--violet);
+	color: var(--violet);
+	border-color: var(--violet);
 }
 
 .btn-violet:hover {
-    background-color: var(--violet);
-    color: white;
+	background-color: var(--violet);
+	color: white;
+}
+/* button */
+
+/* ProdutosCamiseta */
+.linksPages {
+	margin-top: 1%;
+}
+.linksPages .violet {
+	color: var(--violet);
 }
 
-.tamanhosLink {
-    color: black;
-    transition: all 0.3s;
+.linkavaliacao {
+	color: var(--violet);
+	margin-left: 1%;
 }
 
-.tamanhosLink:hover {
-    color: var(--violet);
+.preco {
+	font-size: 1.6rem;
+	margin: 0;
+	margin-top: 7px;
 }
+
+.tituloCamiseta {
+	font-size: 2.5rem;
+}
+
+.cores {
+	height: 35px;
+	width: 35px;
+	border-radius: 30px;
+	display: flex;
+	margin: 0;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	transition: all 0.1s;
+}
+.preto {
+	background-color: black;
+}
+.branco {
+	background-color: whitesmoke;
+}
+.cinza {
+	background-color: gray;
+}
+.cores:hover {
+	border: 2px solid whitesmoke;
+	box-shadow: none;
+}
+.corSelecionada {
+	border: 2px solid whitesmoke;
+	box-shadow: none;
+}
+
+.tituloCores,
+.tituloTamanhos {
+	margin: 0;
+	margin-top: 15px;
+}
+
+.textoTamanhos {
+	text-align: center;
+}
+.cardTamanhos {
+	transition: all 0.4s;
+	margin-bottom: 10px;
+}
+.cardTamanhos:hover {
+	border: 1px solid var(--violet);
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.botoesProvadorTabela {
+	margin-bottom: 10px;
+}
+
+.carouselCamisa .carousel-item {
+	text-align: center;
+}
+.carouselCamisa img {
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	margin: 10px;
+	border-radius: 10px;
+}
+.informaçõesDoProduto,
+.informaçõesDoProdutoConteudo {
+	margin-top: 10px;
+}
+
+.nav-violet {
+	color: var(--violet) !important;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+	background-color: var(--violet);
+	color: white !important;
+}
+/* ProdutosCamiseta */
