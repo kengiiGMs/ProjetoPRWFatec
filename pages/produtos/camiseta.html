@@ -62,6 +62,7 @@
     </nav>
     <div class="container-fluid">
         <div class="row">
+
             <div class="col">
 
                 <div id="carouselExample" class="carousel slide carouselCamisa" data-bs-ride="carousel">
@@ -89,15 +90,15 @@
                 </div>
 
             </div>
+
             <div class="col">
+
                 <b class="tituloCamiseta">Camiseta</b>
-
-
                 <div class="container" style="padding: 0;">
                     <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-half"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
                     <i class="bi bi-star"></i>
                     <a href="" class="linkavaliacao">217 Avaliações</a>
                 </div>
@@ -105,53 +106,47 @@
                 <p class="preco">R$: 89.00 </p>
 
                 <div>
+
                     <p class="tituloCores">Cores:</p>
-                    <a href="" style="display: inline-block;">
-                        <div class="cores preto corSelecionada "></div>
-                    </a>
-                    <a href="" style="display: inline-block;">
-                        <div class="cores branco"></div>
-                    </a>
-                    <a href="" style="display: inline-block;">
-                        <div class="cores cinza"></div>
-                    </a>
+                    <input type="radio" class="btn-check btn-violet-cores" name="cores" id="preto" autocomplete="off"
+                        value="p" checked>
+                    <label class="btn cores preto" for="preto"></label>
+
+                    <input type="radio" class="btn-check btn-violet-cores" name="cores" id="branco" autocomplete="off"
+                        value="b">
+                    <label class="btn cores branco" for="branco"></label>
+
+                    <input type="radio" class="btn-check btn-violet-cores" name="cores" id="cinza" autocomplete="off"
+                        value="c">
+                    <label class="btn cores cinza" for="cinza"></label>
+
                 </div>
 
-                <div>
-                    <div class="row">
-                        <p class="tituloTamanhos">Tamanhos:</p>
-                        <div class="col">
-                            <div class="card cardTamanhos">
-                                <div class="card-body textoTamanhos">
-                                    P
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card cardTamanhos">
-                                <div class="card-body textoTamanhos">
-                                    M
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card cardTamanhos">
-                                <div class="card-body textoTamanhos">
-                                    G
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card cardTamanhos">
-                                <div class="card-body textoTamanhos">
-                                    GG
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                <div class="container containerTamanhos">
+
+                    <p class="tituloTamanhos">Tamanhos:</p>
+                    <input type="radio" class="btn-check btn-violet-tamanho" name="tamanhos" id="tamanhoP"
+                        autocomplete="off" checked value="P">
+                    <label class="btn btn-outline btn-tamanho" for="tamanhoP">P</label>
+
+                    <input type="radio" class="btn-check btn-violet-tamanho" name="tamanhos" id="tamanhoM"
+                        autocomplete="off" value="M">
+                    <label class="btn btn-outline btn-tamanho" for="tamanhoM">M</label>
+
+                    <input type="radio" class="btn-check btn-violet-tamanho" name="tamanhos" id="tamanhoG"
+                        autocomplete="off" value="G">
+                    <label class="btn btn-outline btn-tamanho " for="tamanhoG">G</label>
+
+                    <input type="radio" class="btn-check btn-violet-tamanho" name="tamanhos" id="tamanhoGG"
+                        autocomplete="off" value="GG">
+                    <label class="btn btn-outline btn-tamanho" for="tamanhoGG">GG</label>
+
                 </div>
+
 
                 <div class="row botoesProvadorTabela">
+
                     <div class="col">
                         <div class="d-grid gap-2">
                             <button type="button" class="btn btn-outline btn-violet"><i
@@ -159,12 +154,14 @@
                                 </i>Provador Virtual</button>
                         </div>
                     </div>
+
                     <div class="col">
                         <div class="d-grid gap-2">
                             <button type="button" class="btn btn-outline btn-violet"><i class="bi bi-rulers"></i>
                                 Tabela de Medidas </button>
                         </div>
                     </div>
+
                 </div>
 
                 <div class="d-grid gap-2">
@@ -188,6 +185,7 @@
 
             </div>
         </div>
+
         <div class="row informaçõesDoProduto">
             <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">

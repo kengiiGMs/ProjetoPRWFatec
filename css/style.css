@@ -26,34 +26,35 @@ a {
 /* button */
 
 /* ProdutosCamiseta */
+/* Paginação */
 .linksPages {
-	margin-top: 1%;
+	margin-top: 1rem;
 }
 .linksPages .violet {
 	color: var(--violet);
 }
+/* Paginação */
 
+/* Infomações da camiseta (Nome, Preco e Avaliacao) */
 .linkavaliacao {
 	color: var(--violet);
-	margin-left: 1%;
+	margin-left: 0.5rem;
 }
-
 .preco {
 	font-size: 1.6rem;
 	margin: 0;
-	margin-top: 7px;
+	margin-top: 0.3rem;
 }
-
 .tituloCamiseta {
 	font-size: 2.5rem;
 }
+/* Infomações da camiseta (Nome, Preco e Avaliacao) */
 
+/* Cores da Camiseta */
 .cores {
 	height: 35px;
 	width: 35px;
 	border-radius: 30px;
-	display: flex;
-	margin: 0;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 	transition: all 0.1s;
 }
@@ -66,35 +67,55 @@ a {
 .cinza {
 	background-color: gray;
 }
+
+.cores:focus,
 .cores:hover {
-	border: 2px solid whitesmoke;
-	box-shadow: none;
+	outline: 2px auto white;
+	outline-offset: -2px;
+	background-color: var(--violet) !important;
 }
-.corSelecionada {
-	border: 2px solid whitesmoke;
+
+.btn-violet-cores:checked + .btn,
+.btn-violet-tamanho:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+	background-color: var(--violet);
+	border-color: white;
 	box-shadow: none;
+	color: white;
 }
+/* Cores da Camiseta */
+/* Tamanhos */
 
 .tituloCores,
 .tituloTamanhos {
 	margin: 0;
-	margin-top: 15px;
+	margin-top: 0.8rem;
 }
 
-.textoTamanhos {
-	text-align: center;
+.containerTamanhos {
+	padding: 0;
+	margin-bottom: 1rem;
 }
-.cardTamanhos {
-	transition: all 0.4s;
-	margin-bottom: 10px;
-}
-.cardTamanhos:hover {
+
+.btn-tamanho {
 	border: 1px solid var(--violet);
+	color: var(--violet);
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	transition: all 0.1s;
 }
+
+.btn-violet-tamanho + .btn:hover {
+	background-color: var(--violet);
+	color: white;
+}
+
+/* Tamanhos */
 
 .botoesProvadorTabela {
-	margin-bottom: 10px;
+	margin-bottom: 0.5rem;
 }
 
 .carouselCamisa .carousel-item {
@@ -107,7 +128,7 @@ a {
 }
 .informaçõesDoProduto,
 .informaçõesDoProdutoConteudo {
-	margin-top: 10px;
+	margin: 2rem 2rem 1rem;
 }
 
 .nav-violet {
