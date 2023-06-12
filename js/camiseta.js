@@ -20,14 +20,14 @@ function addCarrinho() {
 	let tamanhoSelecionado = "";
 	let corSelecionada = "";
 	let cores = document.getElementsByName("cores");
-	for (var radio of cores) {
+	for (let radio of cores) {
 		if (radio.checked) {
 			corSelecionada = radio.value;
 			sucessoCor = true;
 		}
 	}
 	let tamanho = document.getElementsByName("tamanhos");
-	for (var radio of tamanho) {
+	for (let radio of tamanho) {
 		if (radio.checked) {
 			tamanhoSelecionado = radio.value;
 			sucessoTamanho = true;
@@ -69,7 +69,7 @@ function addCarrinho() {
 
 function deleteItem(id, item) {
 	let idColetado = id;
-	var itens = JSON.parse(localStorage.getItem(item));
+	let itens = JSON.parse(localStorage.getItem(item));
 	localStorage.removeItem(item);
 
 	for (let i = 0; itens.length > i; i++) {
@@ -80,7 +80,7 @@ function deleteItem(id, item) {
 			}
 		}
 	}
-	var estaVazio = itens.every(function (elemento) {
+	let estaVazio = itens.every(function (elemento) {
 		return elemento === null;
 	});
 	if (estaVazio) {
@@ -93,7 +93,7 @@ function deleteItem(id, item) {
 }
 
 function abrirCarrinho() {
-	var divDados = document.getElementById("conteudoCarrinho");
+	let divDados = document.getElementById("conteudoCarrinho");
 	verificar = getLocal("carrinho");
 	if (verificar == "") {
 		divDados.innerHTML = "<h4>Você não possui nenhum item em seu carrinho</h4>";
@@ -101,20 +101,20 @@ function abrirCarrinho() {
 		divDados.innerHTML = "";
 		for (let i = 0; verificar.length > i; i++) {
 			if (verificar[i] != null) {
-				var itemElement = document.createElement("p");
-				var imgElement = document.createElement("img");
-				var buttonElement = document.createElement("button");
-				var hrElement = document.createElement("hr");
+				let itemElement = document.createElement("p");
+				let imgElement = document.createElement("img");
+				let buttonDeleteElement = document.createElement("button");
+				let hrElement = document.createElement("hr");
 
-				buttonElement.value = verificar[i].id;
-				buttonElement.className = "btn btn-outline-danger";
-				buttonElement.textContent = "Excluir Item";
-				buttonElement.type = "button";
-				buttonElement.addEventListener("click", function () {
+				buttonDeleteElement.value = verificar[i].id;
+				buttonDeleteElement.className = "btn btn-outline-danger";
+				buttonDeleteElement.textContent = "Excluir Item";
+				buttonDeleteElement.type = "button";
+				buttonDeleteElement.addEventListener("click", function () {
 					deleteItem(this.value, "carrinho");
 				});
-				buttonElement.style.display = "block";
-				buttonElement.style.margin = "auto";
+				buttonDeleteElement.style.display = "block";
+				buttonDeleteElement.style.margin = "auto";
 
 				imgElement.src = verificar[i].img;
 				imgElement.style.width = "10rem";
@@ -131,9 +131,31 @@ function abrirCarrinho() {
 
 				divDados.appendChild(imgElement);
 				divDados.appendChild(itemElement);
-				divDados.appendChild(buttonElement);
+				divDados.appendChild(buttonDeleteElement);
 				divDados.appendChild(hrElement);
 			}
 		}
+		let priceElement = document.createElement("p");
+		let contTotalCompra = 0;
+		for (let i = 0; verificar.length > i; i++) {
+			if (verificar[i] != null) {
+				contTotalCompra++;
+			}
+		}
+		let totalCompra = contTotalCompra * 89;
+		priceElement.textContent = "R$: " + totalCompra;
+		priceElement.style.textAlign = "center";
+
+		let buttonPay = document.createElement("button");
+		buttonPay.className = "btn btn-outline-success";
+		buttonPay.textContent = "Finalizar Compra";
+		buttonPay.type = "button";
+		buttonPay.addEventListener("click", function () {
+			alert("Pagamentooo");
+		});
+		buttonPay.style.display = "block";
+		buttonPay.style.margin = "auto";
+		divDados.appendChild(priceElement);
+		divDados.appendChild(buttonPay);
 	}
 }
