@@ -46,6 +46,7 @@ function addCarrinho() {
 					tamanho: tamanhoSelecionado,
 					nome: "Camiseta Básica",
 					img: "/assets/camisa1.png",
+					preco: 89,
 				},
 			];
 			let converter = JSON.stringify(listaCarrinho);
@@ -53,13 +54,20 @@ function addCarrinho() {
 		} else {
 			let itens = JSON.parse(localStorage.getItem("carrinho"));
 			let tamanhoLista = itens.length;
-			let id = itens[tamanhoLista - 1].id;
+			let id = 0;
+			if (itens[tamanhoLista - 1] == null) {
+				id = itens[tamanhoLista - 2].id;
+			} else {
+				id = itens[tamanhoLista - 1].id;
+			}
+
 			let novosItens = {
 				id: id + 1,
 				cor: corSelecionada,
 				tamanho: tamanhoSelecionado,
 				nome: "Camiseta Básica",
 				img: "/assets/camisa1.png",
+				preco: 89,
 			};
 			itens.push(novosItens);
 			localStorage.setItem("carrinho", JSON.stringify(itens));
@@ -95,6 +103,7 @@ function deleteItem(id, item) {
 function abrirCarrinho() {
 	let divDados = document.getElementById("conteudoCarrinho");
 	verificar = getLocal("carrinho");
+	let valorTotal = 0;
 	if (verificar == "") {
 		divDados.innerHTML = "<h4>Você não possui nenhum item em seu carrinho</h4>";
 	} else {
@@ -129,6 +138,8 @@ function abrirCarrinho() {
 					verificar[i].cor;
 				itemElement.style.textAlign = "center";
 
+				valorTotal = valorTotal + verificar[i].preco;
+
 				divDados.appendChild(imgElement);
 				divDados.appendChild(itemElement);
 				divDados.appendChild(buttonDeleteElement);
@@ -136,14 +147,8 @@ function abrirCarrinho() {
 			}
 		}
 		let priceElement = document.createElement("p");
-		let contTotalCompra = 0;
-		for (let i = 0; verificar.length > i; i++) {
-			if (verificar[i] != null) {
-				contTotalCompra++;
-			}
-		}
-		let totalCompra = contTotalCompra * 89;
-		priceElement.textContent = "R$: " + totalCompra;
+
+		priceElement.textContent = "R$: " + valorTotal;
 		priceElement.style.textAlign = "center";
 
 		let buttonPay = document.createElement("button");
@@ -151,7 +156,7 @@ function abrirCarrinho() {
 		buttonPay.textContent = "Finalizar Compra";
 		buttonPay.type = "button";
 		buttonPay.addEventListener("click", function () {
-			alert("Pagamentooo");
+			window.location.href = "../pagamento/pagamento.html";
 		});
 		buttonPay.style.display = "block";
 		buttonPay.style.margin = "auto";
