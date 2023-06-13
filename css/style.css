@@ -141,3 +141,27 @@ a {
 	color: white !important;
 }
 /* ProdutosCamiseta */
+
+/* ComentariosCamiseta */
+.verMais {
+	text-align: center;
+	margin: 20px;
+	font-size: 1.4rem;
+	color: var(--violet);
+	cursor: pointer;
+}
+/* ComentariosCamiseta */
+
+/* Footer */
+
+.redesSociais i {
+	transition: 0.4s all;
+	color: var(--violet) !important;
+}
+
+.redesSociais li :hover {
+	color: var(--violet);
+	opacity: 0.8;
+}
+
+/* Footer */
