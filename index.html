@@ -1,15 +1,215 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio | Home</title>
+    <link rel="shortcut icon" href="assets/logo/logo.png" type="image/png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><img src="assets/logo/logo.svg" alt="" class="logoNavBar" /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Promoções</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Novidades</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Categorias</a>
+              </li>
+            </ul>
+            <div class="flex-shrink-0 dropdown">
+              <a
+                href="#"
+                class="d-block link-body-emphasis text-decoration-none dropdown-toggle show"
+                data-bs-toggle="dropdown"
+                aria-expanded="true"
+              >
+                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle" />
+              </a>
+              <ul
+                class="dropdown-menu text-small shadow"
+                data-popper-placement="bottom-end"
+                style="
+                  position: absolute;
+                  inset: 0px 0px auto auto;
+                  margin: 0px;
+                  transform: translate3d(0.5px, 34px, 0px);
+                "
+              >
+                <li>
+                  <a class="dropdown-item" href="#">Perfil</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Configurações</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Sair</a>
+                </li>
+              </ul>
+            </div>
+            <div class="d-flex"></div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-<body>
+    <div id="carouselHome" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active div-img-carrousel">
+          <img src="assets/banner/1.png" class="d-block w-100 img-carrousel" alt="..." />
+        </div>
+        <div class="carousel-item div-img-carrousel">
+          <img src="assets/banner/3.png" class="d-block w-100 img-carrousel" alt="..." />
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Proximo</span>
+      </button>
+    </div>
 
-</body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card CardsApresentacao">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-box-seam"></i> Frete Gratis para Todo Brasil</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card CardsApresentacao">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-piggy-bank"></i> Descontos de Até 65%</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card CardsApresentacao">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-credit-card"></i> Pague com PIX e Tenha mais Desconto</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div class="container">
+      <h2>Produtos mais Vendidos</h2>
+      <a href="">Ver Mais</a>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <a href="pages/produtos/camiseta.html">
+          <div class="col">
+            <div class="card h-100 cardProdutosMaisVendidos">
+              <img src="assets/camisa1.png" class="card-img-top img-thumbnail" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Camiseta Básica</h5>
+
+                <p class="card-text">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <i class="bi bi-star"></i>
+                </p>
+                <p class="card-text"><b> R$: 89,00 </b></p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <div class="col">
+          <div class="card h-100">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a longer card with supporting text below as a natural lead-in to additional content. This
+                content is a little bit longer.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a longer card with supporting text below as a natural lead-in to additional content.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <span class="mb-3 mb-md-0 text-body-secondary">© 2023 GeekWear</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex redesSociais">
+          <li class="ms-3">
+            <a class="text-body-secondary" href="#"><i class="bi bi-twitter"></i></a>
+          </li>
+          <li class="ms-3">
+            <a class="text-body-secondary" href="#"><i class="bi bi-instagram"></i></a>
+          </li>
+          <li class="ms-3">
+            <a class="text-body-secondary" href="#"><i class="bi bi-facebook"></i></a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
