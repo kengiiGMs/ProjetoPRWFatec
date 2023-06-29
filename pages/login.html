@@ -4,14 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="../assets/logo/logo.png" type="image/png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Login</title>
   </head>
   <body>
+    <a href="../index.html">Voltar</a>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
-        <form action="#">
+        <form action="#" method="get">
           <h1>Criar conta</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -19,10 +21,11 @@
             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
           </div>
           <span>ou use seu e-mail para se registrar</span>
-          <input type="text" placeholder="Nome" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Senha" />
-          <button>Criar Conta</button>
+          <input type="text" placeholder="Nome" id="nomeCriar" />
+          <input type="email" placeholder="Email" id="emailCriar" />
+          <input type="password" placeholder="Senha" id="senhaCriar" />
+          <input type="password" placeholder="Confirme a sua senha" id="confirmaSenhaCriar" />
+          <button type="submit" onclick="criarConta()">Criar Conta</button>
         </form>
       </div>
       <div class="form-container sign-in-container">
@@ -37,17 +40,14 @@
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Senha" />
           <a href="#">Esqueceu sua senha?</a>
-          <button>Entrar</button>
+          <button type="submit" onclick="logar()">Entrar</button>
         </form>
       </div>
       <div class="overlay-container">
         <div class="overlay">
           <div class="overlay-panel overlay-left">
             <h1>Bem vindo de volta!</h1>
-            <p>
-              Para se manter conectado conosco, faça o login com suas
-              informações pessoais
-            </p>
+            <p>Para se manter conectado conosco, faça o login com suas informações pessoais</p>
             <button class="ghost" id="signIn">Entrar</button>
           </div>
           <div class="overlay-panel overlay-right">
