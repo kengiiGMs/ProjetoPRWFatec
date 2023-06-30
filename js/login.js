@@ -12,10 +12,6 @@ signInButton.addEventListener("click", () => {
   container.classList.remove("right-panel-active");
 });
 
-function logar() {
-  return Swal.fire("Logando no Sistema...");
-}
-
 function error(tipo) {
   if (tipo == "geral") {
     Swal.fire({
@@ -35,16 +31,43 @@ function error(tipo) {
       title: "Oops...",
       text: "Esse email já está cadastrado!",
     });
+  } else if (tipo == "semUsuario") {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Nenhum Perfil foi cadastrado!",
+    });
+  } else if (tipo == "semUsuarioSenha") {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Insira a sua Senha e o seu Email nos campos corretos!",
+    });
+  } else if (tipo == "emailSenhaInvalidos") {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Email ou Senha Inválidos!",
+    });
   }
 }
 
-function sucess() {
-  Swal.fire({
-    icon: "success",
-    title: "Conta Cadastrada com Sucesso",
-    showConfirmButton: false,
-    timer: 1500,
-  });
+function sucess(tipo) {
+  if (tipo == "contaCadastrada") {
+    Swal.fire({
+      icon: "success",
+      title: "Conta Cadastrada com Sucesso",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  } else if (tipo == "contaLogada") {
+    Swal.fire({
+      icon: "success",
+      title: "Logando...",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  }
 }
 
 function getLocal(item) {
@@ -56,12 +79,41 @@ function getLocal(item) {
   }
 }
 
+function logar() {
+  let emailLogar = document.querySelector("#emailLogar").value;
+  let senhaLogar = document.querySelector("#senhaLogar").value;
+  let usuarioExisteLogar = false;
+  if (emailLogar != "" && senhaLogar != "") {
+    let usuarioLogar = getLocal("usuario");
+    if (usuarioLogar == "") {
+      error("semUsuario");
+    } else {
+      for (let i = 0; usuarioLogar.length > i; i++) {
+        if (emailLogar == usuarioLogar[i].email && senhaLogar == usuarioLogar[i].senha) {
+          usuarioExisteLogar = true;
+          break;
+        }
+      }
+      if (usuarioExisteLogar == true) {
+        sucess("contaLogada");
+        setTimeout(function () {
+          window.location.href = "../index.html";
+        }, 2000);
+      } else {
+        error("emailSenhaInvalidos");
+      }
+    }
+  } else {
+    error("semUsuarioSenha");
+  }
+}
+
 function criarConta() {
-  nome = document.querySelector("#nomeCriar").value;
-  email = document.querySelector("#emailCriar").value;
-  senha = document.querySelector("#senhaCriar").value;
-  confirmaSenha = document.querySelector("#confirmaSenhaCriar").value;
-  usuarioExiste = false;
+  let nome = document.querySelector("#nomeCriar").value;
+  let email = document.querySelector("#emailCriar").value;
+  let senha = document.querySelector("#senhaCriar").value;
+  let confirmaSenha = document.querySelector("#confirmaSenhaCriar").value;
+  let usuarioExiste = false;
   if (nome != "" && senha != "") {
     if (senha == confirmaSenha) {
       let usuarios = getLocal("usuario");
@@ -77,7 +129,7 @@ function criarConta() {
         ];
         let converter = JSON.stringify(criarUsuario);
         localStorage.setItem("usuario", converter);
-        sucess();
+        sucess("contaCadastrada");
       } else {
         for (let i = 0; usuarios.length > i; i++) {
           if (email == usuarios[i].email) {
@@ -103,7 +155,7 @@ function criarConta() {
           };
           usuarios.push(novoUsuario);
           localStorage.setItem("usuario", JSON.stringify(usuarios));
-          sucess();
+          sucess("contaCadastrada");
         } else {
           error("usuario");
         }
