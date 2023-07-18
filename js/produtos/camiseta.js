@@ -1,16 +1,10 @@
+import { getLocal } from '../get.js';
+import {abrirCarrinho} from '../carrinho.js'
+
 function alerta() {
 	const toastLiveExample = document.getElementById("liveToast");
 	const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
 	toastBootstrap.show();
-}
-
-function getLocal(item) {
-	let itens = JSON.parse(localStorage.getItem(item));
-	if (itens != null) {
-		return itens;
-	} else {
-		return "";
-	}
 }
 
 function addCarrinho() {
@@ -36,7 +30,7 @@ function addCarrinho() {
 
 	if (sucessoCor == true && sucessoTamanho == true) {
 		alerta();
-		verificar = getLocal("carrinho");
+		let verificar = getLocal("carrinho");
 
 		if (verificar == "") {
 			let listaCarrinho = [
@@ -75,9 +69,10 @@ function addCarrinho() {
 	}
 }
 
-function deleteItem(id, item) {
+export function deleteItem(id, item) {
 	let idColetado = id;
 	let itens = JSON.parse(localStorage.getItem(item));
+	let verificar = getLocal("carrinho");
 	localStorage.removeItem(item);
 
 	for (let i = 0; itens.length > i; i++) {
@@ -100,4 +95,12 @@ function deleteItem(id, item) {
 	abrirCarrinho();
 }
 
+
+let addButton = document.getElementById("AdicionarCarrinhoBtn");
+
+if (addButton) {
+	addButton.addEventListener("click", function(event) {
+	  addCarrinho();
+	});
+  }
 

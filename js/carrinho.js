@@ -1,15 +1,9 @@
-function getLocal(item) {
-	let itens = JSON.parse(localStorage.getItem(item));
-	if (itens != null) {
-		return itens;
-	} else {
-		return "";
-	}
-}
+import { getLocal } from './get.js';
+import {deleteItem} from './produtos/camiseta.js';
 
-function abrirCarrinho() {
+export function abrirCarrinho() {
 	let divDados = document.getElementById("conteudoCarrinho");
-	verificar = getLocal("carrinho");
+	let verificar = getLocal("carrinho");
 	let valorTotal = 0;
 	if (verificar == "") {
 		divDados.innerHTML = "<h4>Você não possui nenhum item em seu carrinho</h4>";
@@ -71,3 +65,8 @@ function abrirCarrinho() {
 		divDados.appendChild(buttonPay);
 	}
 }
+
+
+document.getElementById("botaoAbrirCarrinho").addEventListener("click", function(event) {
+	abrirCarrinho();
+  });
