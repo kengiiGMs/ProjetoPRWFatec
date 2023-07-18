@@ -45,7 +45,7 @@ function addCarrinho() {
 					cor: corSelecionada,
 					tamanho: tamanhoSelecionado,
 					nome: "Camiseta Básica",
-					img: "/assets/camisa1.png",
+					img: "/assets/produtos/camisetaBasica/camisa1.png",
 					preco: 89,
 				},
 			];
@@ -66,7 +66,7 @@ function addCarrinho() {
 				cor: corSelecionada,
 				tamanho: tamanhoSelecionado,
 				nome: "Camiseta Básica",
-				img: "/assets/camisa1.png",
+				img: "/assets/produtos/camisetaBasica/camisa1.png",
 				preco: 89,
 			};
 			itens.push(novosItens);

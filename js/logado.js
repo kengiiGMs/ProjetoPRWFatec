@@ -7,14 +7,14 @@ document.addEventListener("DOMContentLoaded", function () {
       return "";
     }
   }
+  let divLogado = document.getElementById("areaContaLogada");
+  let divNaoLogado = document.getElementById("areaContaNaoLogada");
 
   function verificarLogin() {
     let dados = getLocal("usuario");
     if (dados != "") {
       let confirmarLogado = sessionStorage.getItem("sessionConta");
       
-      let divLogado = document.getElementById("areaContaLogada");
-      let divNaoLogado = document.getElementById("areaContaNaoLogada");
       if (confirmarLogado == "true") {
         
         divLogado.style.display = "flex";
