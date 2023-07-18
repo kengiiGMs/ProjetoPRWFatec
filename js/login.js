@@ -96,6 +96,7 @@ function logar() {
       }
       if (usuarioExisteLogar == true) {
         sucess("contaLogada");
+        sessionStorage.setItem("sessionConta", true);
         setTimeout(function () {
           window.location.href = "../index.html";
         }, 2000);
