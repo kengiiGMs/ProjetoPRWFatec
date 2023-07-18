@@ -1,12 +1,6 @@
+import { getLocal } from '../get.js';
+
 document.addEventListener("DOMContentLoaded", function () {
-  function getLocal(item) {
-    let itens = JSON.parse(localStorage.getItem(item));
-    if (itens != null) {
-      return itens;
-    } else {
-      return "";
-    }
-  }
   let divLogado = document.getElementById("areaContaLogada");
   let divNaoLogado = document.getElementById("areaContaNaoLogada");
 

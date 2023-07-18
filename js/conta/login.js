@@ -1,3 +1,6 @@
+import { getLocal } from '../get.js';
+
+/* Animação */
 const signUpButton = document.getElementById("signUp");
 const signInButton = document.getElementById("signIn");
 const container = document.getElementById("container");
@@ -9,6 +12,7 @@ signUpButton.addEventListener("click", () => {
 signInButton.addEventListener("click", () => {
   container.classList.remove("right-panel-active");
 });
+/* Animação */
 
 function error(tipo) {
   if (tipo == "geral") {
@@ -58,6 +62,7 @@ function sucess(tipo) {
       showConfirmButton: false,
       timer: 1500,
     });
+    container.classList.remove("right-panel-active");
   } else if (tipo == "contaLogada") {
     Swal.fire({
       icon: "success",
@@ -65,15 +70,6 @@ function sucess(tipo) {
       showConfirmButton: false,
       timer: 1500,
     });
-  }
-}
-
-function getLocal(item) {
-  let elementos = JSON.parse(localStorage.getItem(item));
-  if (elementos != null) {
-    return elementos;
-  } else {
-    return "";
   }
 }
 
@@ -144,7 +140,6 @@ function criarConta() {
           } else {
             id = usuarios[tamanhoLista - 1].id;
           }
-
           let novoUsuario = {
             id: id + 1,
             nome: nome,
@@ -166,3 +161,12 @@ function criarConta() {
     error("geral");
   }
 }
+
+document.getElementById("criarConta").addEventListener("submit", function(event) {
+  event.preventDefault();
+  criarConta()
+});
+document.getElementById("logar").addEventListener("submit", function(event) {
+  event.preventDefault();
+  logar()
+});
